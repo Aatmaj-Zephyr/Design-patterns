@@ -1,4 +1,5 @@
-interface Subject{
-  void AddObserver( Observer observer );
-  void RemoveObserver( Observer observer);
+interface Subject {
+  void AddObserver(Observer observer);
+
+  void RemoveObserver(Observer observer);
 }
