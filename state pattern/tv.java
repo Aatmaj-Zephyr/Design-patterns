@@ -2,14 +2,20 @@ public class tv{
     private state current_state;
     private state my_TV_off_state; //instance of TV_off_state which the class uses.
      private state my_TV_on_state; //instance of TV_on_state which the class uses.
+     private state my_TV_standby_state; //instance of TV_on_state which the class uses.
      private final int MAX = 5;
     private int volume;
-    tv(TV_off_state new_TV_off_state, TV_on_state new_TV_on_state){
+    tv(TV_off_state new_TV_off_state, TV_on_state new_TV_on_state, TV_standby_state new_standby_state){
         this.my_TV_off_state = new_TV_off_state;
         this.my_TV_off_state.set_tv(this);
         
         this.my_TV_on_state = new_TV_on_state;
          this.my_TV_on_state.set_tv(this);
+         
+         this.my_TV_standby_state = new_standby_state;
+         this.my_TV_standby_state.set_tv(this);
+         
+         
         this.current_state = new_TV_off_state; //tv is on initially
     }
    
@@ -42,6 +48,10 @@ public class tv{
     
      public void set_off_state(){
         this.current_state= this.my_TV_off_state;
+    }
+    
+    public void set_standby_state(){
+        this.current_state= this.my_TV_standby_state;
     }
    public void display_state(){ //debugging the current_state
        this.current_state.display_state();
