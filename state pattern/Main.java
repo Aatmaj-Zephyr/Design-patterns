@@ -16,11 +16,15 @@ public class Main
 		//instances of states that can be used across many instances of tvs 
 		 TV_off_state my_TV_off_state = new TV_off_state(); //instance of TV_off_state to be inserted in the tv.
 		 TV_on_state my_TV_on_state = new TV_on_state(); //instance of TV_on_state to be inserted in the tv.
-
-		tv my_TV = new tv(my_TV_off_state,my_TV_on_state);
+         TV_standby_state my_TV_standby_state = new TV_standby_state();
+		tv my_TV = new tv(my_TV_off_state,my_TV_on_state, my_TV_standby_state);
 		
 		
 		my_TV.power_button();
+		my_TV.volume_up();
+		my_TV.power_button();
+		my_TV.volume_up();
+		my_TV.set_standby_state();//somehow the TV goes into standby.
 		my_TV.volume_up();
 		my_TV.power_button();
 		my_TV.volume_up();
